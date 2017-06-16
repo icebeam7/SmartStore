@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartStore.Paginas.PaginaLibro">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <StackLayout Spacing="10" Padding="5">
+                <Label TextColor="Black" FontSize="24" x:Name="txtNombre" Text="{Binding Nombre}"/>
+                <Label TextColor="Black" FontSize="20" x:Name="txtAutor" Text="{Binding Autor}"/>
+                <Label TextColor="Black" FontSize="16" x:Name="txtEditorial" Text="{Binding Editorial}"/>
+                <Label TextColor="Black" FontSize="16" x:Name="txtAño" Text="{Binding Año}"/>
+            </StackLayout>
+
+            <StackLayout Spacing="5" Padding="5">
+                <Label TextColor="Black" Text="Libros relacionados: "/>
+
+                <ListView x:Name="lsvLibros" ItemSelected="lsvLibros_Selected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand">
+                                    <Label Text="{Binding Nombre}" TextColor="Blue" FontSize="18" FontAttributes="Bold"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding Autor}" TextColor="Green" FontSize="14" FontAttributes="Italic"/>
+                                        <Label Text="{Binding Score}" TextColor="Black" FontSize="10" FontAttributes="None"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+            <StackLayout Spacing="5" Padding="5">
+                <Label TextColor="Black" Text="Emociones encontradas: "/>
+
+                <ListView x:Name="lsvEmociones" ItemSelected="lsvEmociones_ItemSelected" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell Height="70">
+                                <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                                    <Image Source="{Binding Foto}" WidthRequest="50" HeightRequest="50"/>
+                                    <Label Text="{Binding Emocion}" TextColor="Blue" FontSize="18" FontAttributes="Bold"/>
+                                    <Label Text="{Binding Score}" TextColor="Green" FontSize="18" FontAttributes="Bold"/>    
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnEmocion" Text="Emocion" Priority="0" Clicked="btnEmocion_Clicked" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

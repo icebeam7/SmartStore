@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartStore.Paginas.PaginaEmocion">
+    <StackLayout Padding="0" BackgroundColor="White">
+        <Image x:Name="imgPic" WidthRequest="150" HeightRequest="150" Aspect="AspectFit"/>
+        <Button x:Name="btnCamera" x:Id="btnCamera" Text="Tomar foto con la camara" Clicked="btnCamera_Clicked"/>
+        <Button x:Name="btnGallery" x:Id="btnGallery" Text="Elegir foto de la galeria" Clicked="btnCamera_Clicked"/>
+        <Button x:Name="btnAnalizarEmocion" Text="Analizar emocion" Clicked="btnAnalizarEmocion_Clicked" IsEnabled="False"/>
+        <ActivityIndicator IsVisible="False" IsRunning="False" x:Name="actProgress"/>
+        <Label x:Name="lblResult" Text="---" TextColor="Blue" FontSize="20" />
+        <Button x:Name="btnGuardar" Text="Guardar emocion" Clicked="btnGuardar_Clicked" IsEnabled="False"/>
+    </StackLayout>
+</ContentPage>

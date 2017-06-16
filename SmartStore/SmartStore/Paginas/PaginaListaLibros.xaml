@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartStore.Paginas.PaginaListaLibros">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label x:Name="lblTitulo" FontSize="40" HorizontalOptions="Center"/>
+
+            <ListView x:Name="lsvLibros" ItemSelected="lsvLibros_Selected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Nombre}" TextColor="Blue" FontSize="16" FontAttributes="Bold"/>
+                                <Label Text="{Binding Autor}" TextColor="Green" FontSize="12" FontAttributes="Italic"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnRetroceder" Text="Anterior" Priority="0" Clicked="btnRetroceder_Click" Order="Primary"/>
+        <ToolbarItem x:Name="btnAvanzar" Text="Siguiente" Priority="1" Clicked="btnAvanzar_Click" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>

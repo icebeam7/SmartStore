@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SmartStore.Paginas.MainPage">
+    <StackLayout>
+        <Button WidthRequest="200" HeightRequest="80" Text="Ingresar con Facebook" 
+                TextColor="White" BackgroundColor="#01579B" 
+                Font="Bold" FontSize="26" Clicked="Facebook_Clicked"/>
+    </StackLayout>
+</ContentPage>
